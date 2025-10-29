@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAYNATION - Catalog</title>
+
+<style>
+  /* === GLOBAL === */
+  body {
+    background: radial-gradient(circle at top, #002B7F 0%, #00091A 100%);
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+  }
+
+  /* === HEADER === */
+  .header {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #00FFFF;
+    text-shadow: 0 0 20px #00FFFF, 0 0 40px #0063C6;
+    letter-spacing: 4px;
+    user-select: none;
+  }
+
+  /* === BANNER === */
+  .banner {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .banner img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.7);
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+  }
+
+  .banner img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 50px rgba(255,0,0,0.8);
+  }
+
+  /* === MENU === */
+  .menu {
+    max-width: 1280px;
+    margin: 0 auto 50px;
+    display: flex;
+    background: rgba(0,99,198,0.2);
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+  }
+
+  .menu div {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .menu div:hover:not(.active) {
+    background-color: #00FFFF;
+    color: #002147;
+    box-shadow: inset 0 -3px 0 #FF0000;
+  }
+
+  .menu .active {
+    background: linear-gradient(90deg, #FF0000 0%, #990000 100%);
+    color: #fff;
+    box-shadow: 0 0 20px #FF0000;
+  }
+
+  .menu a {
+    color: inherit;
+    display: block;
+  }
+
+  /* === SECTION TITLES === */
+  .section-title {
+    text-align: center;
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: bold;
+    margin: 50px 0 25px;
+    color: #00FFFF;
+    text-shadow: 0 0 20px #00FFFF;
+    user-select: none;
+    animation: glowText 3s infinite alternate ease-in-out;
+  }
+
+  @keyframes glowText {
+    from { text-shadow: 0 0 15px #00FFFF; }
+    to { text-shadow: 0 0 35px #FF0000; }
+  }
+
+  /* === PRODUCT GRID === */
+  .product-grid {
+    max-width: 1500px;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .product {
+    background: linear-gradient(180deg, #001F4E 0%, #000C1F 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,255,255,0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px #00FFFF, 0 0 50px #FF0000;
+    z-index: 10;
+  }
+
+  /* === PRODUCT IMAGE === */
+  .product img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+  }
+
+  .product:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+  }
+
+  /* === PRODUCT INFO === */
+  .product-info {
+    padding: 15px 10px;
+    border-top: 3px solid #00FFFF;
+    background: rgba(0, 33, 71, 0.8);
+    color: #00FFFF;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .product-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+    user-select: none;
+  }
+
+  .product-price {
+    font-size: 20px;
+    background-color: #00FFFF;
+    color: #001F4E;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    user-select: none;
+    box-shadow: 0 0 10px #00FFFF;
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === FOOTER === */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #00FFFF;
+    font-size: 14px;
+    background-color: #000C1F;
+    border-top: 2px solid #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+  }
+</style>
+</head>
+
+<body>
+  <div class="header">PLAYNATION</div>
+
+  <div class="banner">
+    <img src="img/PS Store image.jpg" alt="Banner PS Store" width="1200" height="675" />
+  </div>
+
+  <div class="menu">
+    <div><a href="index.html">HOME</a></div>
+    <div><a href="shopping guide.html">SHOPPING GUIDE</a></div>
+    <div class="active">CATALOG</div>
+    <div><a href="profile.html">PROFILE</a></div>
+  </div>
+
+  <!-- PS5 Section -->
+  <div class="section-title">PLAYSTATION 5</div>
+  <div class="product-grid">
+    <div class="product">
+      <img src="img/death_stranding_2.jpg" alt="Death Stranding 2" />
+      <div class="product-info">
+        <div class="product-name">DEATH STRANDING 2</div>
+        <div class="product-price">240.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/818m9WGY0lL.jpg" alt="The Last of Us 2 Remastered" />
+      <div class="product-info">
+        <div class="product-name">THE LAST OF US 2 REMASTERED</div>
+        <div class="product-price">680.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/613lyxBIXoL._UF1000,1000_QL80_.jpg" alt="God of War Ragnarok" />
+      <div class="product-info">
+        <div class="product-name">GOD OF WAR RAGNAROK</div>
+        <div class="product-price">560.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/550x703.jpg" alt="Life is Strange Double Exposure" />
+      <div class="product-info">
+        <div class="product-name">LIFE IS STRANGE DOUBLE EXPOSURE</div>
+        <div class="product-price">850.000 Rp</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PS4 Section -->
+  <div class="section-title">PLAYSTATION 4</div>
+  <div class="product-grid">
+    <div class="product">
+      <img src="img/2724616053059.jpg" alt="Detroit Become Human" />
+      <div class="product-info">
+        <div class="product-name">DETROIT BECOME HUMAN</div>
+        <div class="product-price">165.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/61GTZnzeZgL._UF1000,1000_QL80_.jpg" alt="Ghost of Tsushima" />
+      <div class="product-info">
+        <div class="product-name">GHOST OF TSUSHIMA</div>
+        <div class="product-price">350.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/81c7WFBfNyL.jpg" alt="Until Dawn" />
+      <div class="product-info">
+        <div class="product-name">UNTIL DAWN</div>
+        <div class="product-price">180.000 Rp</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="img/71a4A85r+sL.jpg" alt="Road 96" />
+      <div class="product-info">
+        <div class="product-name">ROAD 96</div>
+        <div class="product-price">265.000 Rp</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 PLAYNATION — All Rights Reserved
+  </footer>
+</body>
+</html>
