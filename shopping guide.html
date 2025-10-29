@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Guide - PlayNation</title>
+
+<style>
+  /* === GLOBAL STYLE === */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", Courier, monospace;
+    background: radial-gradient(circle at top, #0048A3 0%, #000C1F 90%);
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: #FF0000;
+    text-shadow: 0 0 10px #FF0000;
+  }
+
+  /* === HEADER === */
+  .header {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #00FFFF;
+    text-shadow: 0 0 25px #00FFFF, 0 0 50px #0063C6;
+    letter-spacing: 4px;
+    user-select: none;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  /* === BANNER === */
+  .banner {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .banner img {
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0,255,255,0.8);
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+  }
+
+  .banner img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 60px rgba(255,0,0,0.9);
+  }
+
+  /* === MENU === */
+  .menu {
+    max-width: 1280px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    background: rgba(0, 99, 198, 0.15);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    animation: fadeInUp 1.3s ease-in-out;
+  }
+
+  .menu div {
+    flex: 1;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 22px;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    user-select: none;
+    color: #fff;
+  }
+
+  .menu a {
+    display: block;
+    color: inherit;
+  }
+
+  .menu div:hover:not(.active) {
+    background-color: #00FFFF;
+    color: #00122E;
+    box-shadow: inset 0 -4px 0 #FF0000;
+  }
+
+  .menu .active {
+    background: linear-gradient(90deg, #FF0000, #990000);
+    color: #fff;
+    box-shadow: 0 0 25px #FF0000;
+  }
+
+  /* === CONTENT BOX === */
+  .content {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    background: rgba(0, 40, 80, 0.85);
+    border-radius: 15px;
+    padding: 40px 50px;
+    box-shadow: 0 0 35px rgba(0,255,255,0.7);
+    color: #FFFFFF;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1.8s ease-in-out;
+  }
+
+  h3 {
+    font-size: 26px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+    position: relative;
+  }
+
+  h3 span {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+
+  ul {
+    font-size: 18px;
+    color: #00FFAA;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  ul ul {
+    margin-top: 8px;
+    color: #7FFFD4;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #E0FFFF;
+  }
+
+  blockquote {
+    font-size: 18px;
+    background: rgba(0, 255, 0, 0.08);
+    border-left: 5px solid #00FF00;
+    padding: 15px 20px;
+    margin: 25px 0;
+    color: #B0FFB0;
+    box-shadow: inset 0 0 10px rgba(0,255,0,0.3);
+    border-radius: 5px;
+  }
+
+  blockquote strong {
+    color: #00FF00;
+  }
+
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00FFFF, transparent);
+    margin: 50px 0;
+  }
+
+  /* === FOOTER === */
+  footer {
+    text-align: center;
+    color: #00FFFF;
+    background: #000C1F;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 2px solid #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .content {
+      padding: 25px 20px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    ul {
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="header">PLAYNATION</div>
+
+  <div class="banner">
+    <img src="img/PS Store image.jpg" alt="PlayNation Banner" />
+  </div>
+
+  <div class="menu">
+    <div><a href="index.html">HOME</a></div>
+    <div class="active">SHOPPING GUIDE</div>
+    <div><a href="catalog.html">CATALOG</a></div>
+    <div><a href="profile.html">PROFILE</a></div>
+  </div>
+
+  <div class="content">
+    <h3><span>?</span> <strong>1. Tentukan Judul Game yang Diinginkan</strong></h3>
+    <ul>
+      <li>Tentukan dulu game apa yang ingin dibeli.</li>
+      <li>Cek apakah game tersedia dalam versi <strong>physical (disc)</strong>.</li>
+      <li>Pastikan kompatibel dengan konsol kamu (PS4 atau PS5).</li>
+    </ul>
+    <blockquote>?? <strong>Tips:</strong> Gunakan situs seperti <em>PlayStation Store</em>, <em>IGN</em>, atau <em>Metacritic</em> untuk membaca review game sebelum membeli.</blockquote>
+
+    <hr />
+
+    <h3><span>?</span> <strong>2. Pilih Versi Game</strong></h3>
+    <ul>
+      <li><strong>Region:</strong>
+        <ul>
+          <li>R1: Amerika</li>
+          <li>R2: Eropa</li>
+          <li>R3: Asia <em>(R3 populer di Indonesia karena subtitle Bahasa Indonesia tersedia)</em></li>
+        </ul>
+      </li>
+      <li><strong>Standard / Deluxe / GOTY Edition:</strong>
+        <ul>
+          <li>Standard: Hanya game dasar.</li>
+          <li>Deluxe: Termasuk DLC atau item digital tambahan.</li>
+          <li>GOTY (Game of the Year): Sudah termasuk semua konten lengkap.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    © 2025 PLAYNATION — All Rights Reserved
+  </footer>
+
+</body>
+</html>
